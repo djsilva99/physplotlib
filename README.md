@@ -6,13 +6,18 @@ attributes:
 
 self.header -> saves the data of the first line pointed out in in initialization
 self.numberColumns -> saves the number of columns present in the object
-self.data -> saves all the values present in the file. each entry corresponds to one line, Each entry is a list of values 
-	corresponding to each column
+self.data -> saves all the values present in the file. each entry corresponds to one line, Each entry is a list of
+	values corresponding to each column
 
 methods:
 
 removePeriodicPoints -> allows to remove periodic points for specific columns.
-plot -> plots the columnY as a function of columnX
+singlePlot -> plots the columnY as a function of columnX
+reset
+average
+save
+removeValues
+plotHist
 
 
 Example:
