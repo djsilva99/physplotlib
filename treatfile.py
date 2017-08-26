@@ -119,4 +119,5 @@ class treatfile:
 
 
 
+		self.header.pop(column)
 		self.data.pop(column)
