@@ -160,6 +160,8 @@ class statplot:
 					self.data[data_index_list[0]][list_y_Column_list[0][0]],symbol[0])
 				if xtype!='lin':
 					plt.xscale(xtype)
+				if ytype!='lin':
+					plt.yscale(ytype)
 
 		#for multiplots
 		else:
