@@ -121,3 +121,31 @@ class treatfile:
 
 		self.header.pop(column)
 		self.data.pop(column)
+
+
+
+
+
+	def calculate(self,column,operation):
+
+
+
+		"""
+		This method creates a new column with the data from column treated with operation
+		"""
+
+
+		#converts time format H:M:S to seconds
+		if operation == 'H:M:S to sec':
+
+			self.data.append([])
+			for i in self.data[column]:
+				H,M,S=i.split(':')
+				H=float(H)
+				M=float(M)
+				S=float(S)
+				self.data[-1].append(3600*H+60*M+S)
+
+		self.header.append(self.header[column]+' ('+operation+')')
+			
+
