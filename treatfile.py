@@ -62,8 +62,8 @@ class treatfile:
 		self.header=[name[0] for name in filter]
 
 		#saves original self variables
-		self.data_saved = self.data
-		self.header_saved = self.header
+		self.data_saved = self.data[:]
+		self.header_saved = self.header[:]
 
 
 

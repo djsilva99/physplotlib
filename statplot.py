@@ -66,8 +66,8 @@ class statplot:
 
 		#loads the initial data if method reset is used afterwards
 		self.file_name.append(file_name)
-		self.header_saved = self.header
-		self.data_saved = self.data
+		self.header_saved = self.header[:]
+		self.data_saved = self.data[:]
 
 
 
