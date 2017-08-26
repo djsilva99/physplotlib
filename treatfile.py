@@ -104,3 +104,19 @@ class treatfile:
 
 		self.data = self.data_saved
 		self.header = self.header_saved
+
+
+
+
+
+	def removeColumn(self,column):
+
+
+
+		"""
+		This method removes column from self.data
+		"""
+
+
+
+		self.data.pop(column)
