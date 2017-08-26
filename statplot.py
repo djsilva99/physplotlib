@@ -150,18 +150,18 @@ class statplot:
 
 		#for only one plot
 		if len(data_index_list)==1 and len(list_y_Column_list[0])==1:
-			if len(list_y_Column_list[0])==1:
-				plt.title(self.file_name[data_index_list[0]])
-				if x_title == 'default':
-					plt.xlabel(self.header[data_index_list[0]][list_x_Column[0]])
-				if x_title == 'default':
-					plt.ylabel(self.header[data_index_list[0]][list_y_Column_list[0][0]])
-				plt.plot(self.data[data_index_list[0]][list_x_Column[0]],
-					self.data[data_index_list[0]][list_y_Column_list[0][0]],symbol[0])
-				if xtype!='lin':
-					plt.xscale(xtype)
-				if ytype!='lin':
-					plt.yscale(ytype)
+
+			plt.title(self.file_name[data_index_list[0]])
+			if x_title == None:
+				plt.xlabel(self.header[data_index_list[0]][list_x_Column[0]])
+			if y_title == None:
+				plt.ylabel(self.header[data_index_list[0]][list_y_Column_list[0][0]])
+			plt.plot(self.data[data_index_list[0]][list_x_Column[0]],
+				self.data[data_index_list[0]][list_y_Column_list[0][0]],symbol[0])
+			if xtype!='lin':
+				plt.xscale(xtype)
+			if ytype!='lin':
+				plt.yscale(ytype)
 
 		#for multiplots
 		else:
