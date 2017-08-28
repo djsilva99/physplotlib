@@ -115,7 +115,7 @@ class statplot:
 
 	def verticalPlot(self,data_index_list,list_x_Column,list_y_Column_list,xtype='lin',ytype='lin',symbol='default',
 		title=None,legenda='default',x_title=None,y_title=None,legend_position='upper right',
-		legend_size=10,x_limits='default',y_limits='default'):
+		legend_size=10,x_limits='default',y_limits='default',grid=False,area='default'):
 
 
 
@@ -190,6 +190,9 @@ class statplot:
 			plt.xlim(x_limits)
 		if y_limits!='default':
 			plt.xlim(y_limits)
+		if area != 'default':
+			plt.axvspan(area[0], area[1], ymin=area[2], ymax=area[3], alpha=area[4], color=area[5])
+		plt.grid(grid)
 		plt.show()
 
 
