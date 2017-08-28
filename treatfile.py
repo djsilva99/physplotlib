@@ -135,7 +135,6 @@ class treatfile:
 		"""
 
 
-		self.header.pop(line)
 		for i in range(len(self.data)):
 			self.data[i].pop(line)
 
