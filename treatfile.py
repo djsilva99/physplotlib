@@ -126,6 +126,23 @@ class treatfile:
 
 
 
+	def removeLine(self,line):
+
+
+
+		"""
+		This method removes line line from all columns
+		"""
+
+
+		self.header.pop(line)
+		for i in range(len(self.data)):
+			self.data[i].pop(line)
+
+
+
+
+
 	def calculate(self,column,operation):
 
 
