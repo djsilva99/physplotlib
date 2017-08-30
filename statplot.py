@@ -189,7 +189,7 @@ class statplot:
 		if x_limits!='default':
 			plt.xlim(x_limits)
 		if y_limits!='default':
-			plt.xlim(y_limits)
+			plt.ylim(y_limits)
 		if area != 'default':
 			plt.axvspan(area[0], area[1], ymin=area[2], ymax=area[3], alpha=area[4], color=area[5])
 		plt.grid(grid)
