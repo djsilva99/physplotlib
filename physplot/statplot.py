@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-"""Contains the class dyplot.
+"""Contains the class statplot.
 
 Used to make static plots of data stored in csv (or txt) files.
 

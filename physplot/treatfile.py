@@ -138,3 +138,25 @@ class treatfile:
                     self.header[column] + ' (' + operation + ')')
             else:
                 print 'type of add_info list not correct.'
+
+    def saveFile(self, file_name, delim=','):
+        """Saves the data into a file
+
+        file_name: file name where data is saved
+        delim: separation string between entries
+        """
+
+        f = open(file_name, 'wt')
+        for i in range(len(self.header)):
+            if i != 0:
+                f.write(delim)
+            f.write(self.header[i])
+        f.write('\n')
+
+        for j in range(len(self.data[0])):
+            for i in range(len(self.data)):
+                if i != 0:
+                    f.write(delim)
+                f.write(str(self.data[i][j]))
+            f.write('\n')
+        f.close()
