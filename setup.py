@@ -10,10 +10,15 @@ and plots the resulted data in a very simple manner.
 
 from setuptools import setup
 
+description = 'Usefull when handling with output files from numerical '
+description += 'simulations in a quick way. Loads data from text files, makes'
+description += ' treatments and plots the resulted data in a very simple'
+description += ' manner.'
 
 setup(name='physplotlib',
       version='0.1.2',
-      description='Library for plotting data from log files',
+      description='Library for plotting data, in particular from log files',
+      long_description=description,
       classifiers=[
           'Development Status :: 3 - Alpha',
           'License :: OSI Approved :: MIT License',
