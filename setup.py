@@ -12,7 +12,7 @@ from setuptools import setup
 
 
 setup(name='physplotlib',
-      version='0.1.1',
+      version='0.1.2',
       description='Library for plotting data from log files',
       classifiers=[
           'Development Status :: 3 - Alpha',
