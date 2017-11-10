@@ -2,7 +2,7 @@
 
 physplotlib is a python2.7 library for plotting data. It loads data from text files, makes simple treatments and plots data in a very simple manner. physplotlib is useful when handling with output files from numerical simulations or to plot quickly data from text files. 
 
-@author: Daniel Silva <br> current version: v0.1.2
+author: Daniel Silva (djsilva99@gmail.com) <br> current version: v0.1.2
 
 
 ## Table of contents
