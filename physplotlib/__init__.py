@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-"""Physplot.
+"""Physplotlib.
 
 This module contains classes to load data from csv (or txt) files, make
 operations between columns or lines, and plot the respective treated

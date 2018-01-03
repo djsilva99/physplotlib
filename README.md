@@ -1,5 +1,7 @@
 # physplotlib
 
+<img src="https://github.com/danieljosesilva/physplotlib/blob/master/img/physplotlib.png" alt="Drawing" height="30"/> physplotlib v0.1.2
+
 physplotlib is a python2.7 library for plotting data. It loads data from text files, makes simple treatments and plots data in a very simple manner. physplotlib is useful when handling with output files from numerical simulations or to plot quickly data from text files. 
 
 author: Daniel Silva (djsilva99@gmail.com) <br> current version: v0.1.2
@@ -30,13 +32,13 @@ author: Daniel Silva (djsilva99@gmail.com) <br> current version: v0.1.2
 To install simply use the pip package manager:
 
 ```bash
-pip install physplotlib
+$ pip install physplotlib
 ```
 
 To import the physplotlib module simply type in the python shell:
 
 ```python
-import physplotlib as pp
+>>> import physplotlib as pp
 ```
 
 From this point on use the prefix pp. before any object creation
@@ -64,27 +66,27 @@ This class loads data from a given file constantly and makes dynamic plots. dypl
 treatfile can be used to make simple operations with csv (or txt) files before plotting or converting into other csv (or txt) files. It loads data from txt files, filters the values that comes after a given string and makes some operations, before exporting the data back or plotting with the staticplot class. To initialize the object type
 
 ```python
-object = pp.treatfile(file_name, filter)
+foo = pp.treatfile(file_name, filter)
 ```
 
-where `file_name` is the url of the text file to be treated, and `filter` is a list. Each entry of `filter` is a 2 string list where the first element corresponds to the string before the value to be filtered and the second element corresponds to the string after the value to be filtered. The default value for the second string is '\n' and thus can be neglected. This initialization will load the data into `object.data`, which has a dimension of `len(<filter>)`. Each element of `object.data` is a list of filtered data. This initialization also loads the file_name into `object.file_name`, and the header into `object.header`, which is a list of the string labels of `object.data`. 
+where `file_name` is the url of the text file to be treated, and `filter` is a list. Each entry of `filter` is a 2 string list where the first element corresponds to the string before the value to be filtered and the second element corresponds to the string after the value to be filtered. The default value for the second string is '\n' and thus can be neglected. This initialization will load the data into `foo.data`, which has a dimension of `len(<filter>)`. Each element of `foo.data` is a list of filtered data. This initialization also loads the file_name into `foo.file_name`, and the header into `foo.header`, which is a list of the string labels of `foo.data`. 
 
 ##### filter <a name="treatfile-filter"></a>
 
-To filter the data from `object.data`, use the filter method:
+To filter the data from `foo.data`, use the filter method:
 
 ```python
-object.filter(column, values)
+foo.filter(column, values)
 ```
 
 where `values` is a list of values used for the filter, and `column` is the column to be filtered for the values in the `values` list.
 
 ##### compute <a name="treatfile-compute"></a>
 
-To compute the entries of the `object.data` use the calculate method:
+To compute the entries of the `foo.data` use the calculate method:
 
 ```python
- object.calculate(column, operation, add_info='default')
+ foo.calculate(column, operation, add_info='default')
 ```
 
 where `column` is the integer referring to the column to operate. `operation` is a string that identifies the operation, and can have the following values:
@@ -97,7 +99,7 @@ where `column` is the integer referring to the column to operate. `operation` is
 To save the data into a file use the saveFile method:
 
 ```python
-object.saveFile(file_name, delim=',')
+foo.saveFile(file_name, delim=',')
 ```
 
 where `file_name` is the url of the text file to be saved, and `delim` is a string with the delimitation between columns. The default value is ','.
@@ -108,10 +110,10 @@ where `file_name` is the url of the text file to be saved, and `delim` is a stri
 statplot can be used to make static plots of data stored in csv (or txt) files. It loads data, makes simple treatment and plots the data in a simple manner, without refreshing constantly while the source file is being changed. To initialize the object type
 
 ```python
-object = pp.statplot()
+foo = pp.statplot()
 ```
 
-This initialization creates the `object.data` variable, which is a list of books. Each entry of a book list corresponds to different loaded data. The initialization also creates the `object.header` variable, which is a list of headers for the books, and `object.file_name`, which is a list that indicates the origin of the data (loaded file or loaded values). 
+This initialization creates the `foo.data` variable, which is a list of books. Each entry of a book list corresponds to different loaded data. The initialization also creates the `foo.header` variable, which is a list of headers for the books, and `foo.file_name`, which is a list that indicates the origin of the data (loaded file or loaded values). 
 
 
 ##### load file <a name="statplot-loadfile"></a>
@@ -119,7 +121,7 @@ This initialization creates the `object.data` variable, which is a list of books
 To load data from a file type
 
 ```python
-object.loadFile(file_name, header=True, delim=',')
+foo.loadFile(file_name, header=True, delim=',')
 ```
 
 where `file_name` is the url of the text file to be loaded, `header` is a boolean that indicates if the file has a header, and `delim` is a string that defines the separation of the column. Note that loading a file does not remove existing data but appends the new data.
@@ -130,16 +132,16 @@ where `file_name` is the url of the text file to be loaded, `header` is a boolea
 To load the whole data from python variables type
 
 ```python
-object.loadFile(header, data, dataName)
+foo.loadFile(header, data, dataName)
 ```
-where `header` is a list for the `object.header` value, `data` is the value for `object.data`, and `dataName` is the value for `object.file_name` (equivalent of file names).
+where `header` is a list for the `foo.header` value, `data` is the value for `foo.data`, and `dataName` is the value for `foo.file_name` (equivalent of file names).
 
 ##### reset <a name="statplot-reset"></a>
 
-To remove all the data from the `object` type
+To remove all the data from the `foo` object type
 
 ```python
-object.reset()
+foo.reset()
 ```
 
 
@@ -148,12 +150,12 @@ object.reset()
 To plot each entry of a column from a book type
 
 ```python
-object.verticalPlot(data_index_list, list_x_Column, list_y_Column_list,
-                    xtype='lin', ytype='lin', symbol='default', title=None,
-                    legenda='default', x_title=None, y_title=None,
-                    legend_position='upper right', legend_size=10,
-                    x_limits='default', y_limits='default', grid=False,
-                    area='default', line='default')
+foo.verticalPlot(data_index_list, list_x_Column, list_y_Column_list,
+                 xtype='lin', ytype='lin', symbol='default', title=None,
+                 legenda='default', x_title=None, y_title=None,
+                 legend_position='upper right', legend_size=10,
+                 x_limits='default', y_limits='default', grid=False,
+                 area='default', line='default')
 ```
 
 This command plots the data using matplotlib.pyplot, with the input variables that are listed below:
@@ -182,13 +184,13 @@ This command plots the data using matplotlib.pyplot, with the input variables th
 To plot each entry of a row from a book type
 
 ```python
-object.horizontalPlot(data_index_list, x_line_list, columns_list,
-                      x_line_value='default', x_column='default',
-                      symbol='o-', limits='default',
-                      xlabel='file column index', ylabel='value',
-                      x_shift='default', x_length='default',
-                      title='default', legend_position='upper right',
-                      legend_size=10, xtype='lin', ytype='lin')
+foo.horizontalPlot(data_index_list, x_line_list, columns_list,
+                   x_line_value='default', x_column='default',
+                   symbol='o-', limits='default',
+                   xlabel='file column index', ylabel='value',
+                   x_shift='default', x_length='default',
+                   title='default', legend_position='upper right',
+                   legend_size=10, xtype='lin', ytype='lin')
 ```
 
 This method plots the data using matplotlib.pyplot, with the input variables that are listed below:
@@ -212,7 +214,7 @@ This method plots the data using matplotlib.pyplot, with the input variables tha
 
 ##### operation <a name="statplot-operation"></a>
 
-To realize operations between columns of any stored book in `object.data` type
+To realize operations between columns of any stored book in `foo.data` type
 
 ```python
 object.operation(operation, data_to_operate, add_info='default',
@@ -238,7 +240,7 @@ dyplot can be used to plot the data from csv (or txt) files, refreshing the plot
 To initialize the object type
 
 ```python
-object = pp.dyplot(fileName, header=True, delim=',')
+foo = pp.dyplot(fileName, header=True, delim=',')
 ```
 
 where `fileName` is the url of the file to be loaded. ,`header:` is a boolean that tells if the file has a header, and `delim` is a string that defines the separation of the column.
@@ -249,7 +251,7 @@ where `fileName` is the url of the file to be loaded. ,`header:` is a boolean th
 To plot columns type
 
 ```python
-object.verticalPlot(xColumn, yColumnsList, timeInterval=1000)
+foo.verticalPlot(xColumn, yColumnsList, timeInterval=1000)
 ```
 
 where `xColumn` is column index of the x data, `yColumnList` is column index list of the y data, and `timeInterval` is the refresh time in milliseconds. This method plots each entry of the input list `yColumnList` as a function of the input list `xColumn`.
@@ -260,9 +262,9 @@ where `xColumn` is column index of the x data, `yColumnList` is column index lis
 To plot rows type
 
 ```python
-object.horizontalPlot(columns, xColumn='default', limits='default',
-                      xShift=0, xLength='default', xlabel='file column index',
-                      ylabel='value', timeInterval=1000, symbol='o-')
+foo.horizontalPlot(columns, xColumn='default', limits='default',
+                   xShift=0, xLength='default', xlabel='file column index',
+                   ylabel='value', timeInterval=1000, symbol='o-')
 ```
 This method plots the values of the last line of the file as a function of column index, with the following input variables.
 
