@@ -1,6 +1,6 @@
 # physplotlib
 
-<img src="https://github.com/danieljosesilva/physplotlib/blob/master/img/physplotlib.png" alt="Drawing" height="30"/> physplotlib v0.1.2
+<img src="https://github.com/danieljosesilva/physplotlib/blob/master/img/physplotlib.png" alt="Drawing" height="40"/> physplotlib v0.1.2
 
 physplotlib is a python2.7 library for plotting data. It loads data from text files, makes simple treatments and plots data in a very simple manner. physplotlib is useful when handling with output files from numerical simulations or to plot quickly data from text files. 
 
