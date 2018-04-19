@@ -6,6 +6,8 @@ physplotlib is a python2.7 library for plotting data. It loads data from text fi
 
 author: Daniel Silva (djsilva99@gmail.com) <br> current version: v0.1.2
 
+![resSwitch-screenshot](https://github.com/danieljosesilva/heatrapy/blob/master/img/physplotlib.gif)
+
 
 ## Table of contents
 
