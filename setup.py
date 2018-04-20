@@ -16,7 +16,7 @@ description += ' treatments and plots the resulted data in a very simple'
 description += ' manner.'
 
 setup(name='physplotlib',
-      version='0.1.2',
+      version='0.1.3',
       description='Library for plotting data, in particular from log files',
       long_description=description,
       classifiers=[
