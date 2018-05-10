@@ -11,7 +11,7 @@ author: Daniel Silva (djsilva99@gmail.com) <br> current version: v0.1.4
 
 ## Table of contents
 
-1. [Installation](#instalation)
+1. [Installation](#installation)
 2. [Introduction](#introduction)
 3. [treatfile class](#treatfile)
     1. [filter](#treatfile-filter)
@@ -29,7 +29,7 @@ author: Daniel Silva (djsilva99@gmail.com) <br> current version: v0.1.4
     2. [horizontal plot](#dyplot-horizontalplot)
 
 
-## 1. Instalation <a name="instalation"></a>
+## 1. Installation <a name="instalation"></a>
 
 To install use the pip package manager:
 
